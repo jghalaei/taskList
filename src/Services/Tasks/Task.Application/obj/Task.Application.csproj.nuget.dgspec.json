@@ -1,0 +1,136 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\projects\\taskList\\src\\Services\\Tasks\\Task.Application\\Task.Application.csproj": {}
+  },
+  "projects": {
+    "C:\\projects\\taskList\\src\\Services\\TaskList.Domain\\TaskList.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\projects\\taskList\\src\\Services\\TaskList.Domain\\TaskList.Domain.csproj",
+        "projectName": "TaskList.Domain",
+        "projectPath": "C:\\projects\\taskList\\src\\Services\\TaskList.Domain\\TaskList.Domain.csproj",
+        "packagesPath": "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\taskList\\src\\Services\\TaskList.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jghalaeizadeh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Users\\jghalaeizadeh\\AppData\\Roaming\\NuGet": {},
+          "C:\\projects\\ecommerce\\src\\packages\\": {},
+          "c:\\projects\\ecommerce\\src\\packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\projects\\taskList\\src\\Services\\Tasks\\Task.Application\\Task.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\projects\\taskList\\src\\Services\\Tasks\\Task.Application\\Task.Application.csproj",
+        "projectName": "Task.Application",
+        "projectPath": "C:\\projects\\taskList\\src\\Services\\Tasks\\Task.Application\\Task.Application.csproj",
+        "packagesPath": "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\taskList\\src\\Services\\Tasks\\Task.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jghalaeizadeh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Users\\jghalaeizadeh\\AppData\\Roaming\\NuGet": {},
+          "C:\\projects\\ecommerce\\src\\packages\\": {},
+          "c:\\projects\\ecommerce\\src\\packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\projects\\taskList\\src\\Services\\TaskList.Domain\\TaskList.Domain.csproj": {
+                "projectPath": "C:\\projects\\taskList\\src\\Services\\TaskList.Domain\\TaskList.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.8.0, )"
+            },
+            "Mediatr": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

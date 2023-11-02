@@ -1,0 +1,17 @@
+C:\projects\taskList\src\Services\Users\User.Application\bin\Debug\net6.0\User.Application.deps.json
+C:\projects\taskList\src\Services\Users\User.Application\bin\Debug\net6.0\User.Application.dll
+C:\projects\taskList\src\Services\Users\User.Application\bin\Debug\net6.0\User.Application.pdb
+C:\projects\taskList\src\Services\Users\User.Application\bin\Debug\net6.0\GenericContracts.dll
+C:\projects\taskList\src\Services\Users\User.Application\bin\Debug\net6.0\User.Core.dll
+C:\projects\taskList\src\Services\Users\User.Application\bin\Debug\net6.0\User.Core.pdb
+C:\projects\taskList\src\Services\Users\User.Application\bin\Debug\net6.0\GenericContracts.pdb
+C:\projects\taskList\src\Services\Users\User.Application\obj\Debug\net6.0\User.Application.csproj.AssemblyReference.cache
+C:\projects\taskList\src\Services\Users\User.Application\obj\Debug\net6.0\User.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\taskList\src\Services\Users\User.Application\obj\Debug\net6.0\User.Application.AssemblyInfoInputs.cache
+C:\projects\taskList\src\Services\Users\User.Application\obj\Debug\net6.0\User.Application.AssemblyInfo.cs
+C:\projects\taskList\src\Services\Users\User.Application\obj\Debug\net6.0\User.Application.csproj.CoreCompileInputs.cache
+C:\projects\taskList\src\Services\Users\User.Application\obj\Debug\net6.0\User.Application.csproj.CopyComplete
+C:\projects\taskList\src\Services\Users\User.Application\obj\Debug\net6.0\User.Application.dll
+C:\projects\taskList\src\Services\Users\User.Application\obj\Debug\net6.0\refint\User.Application.dll
+C:\projects\taskList\src\Services\Users\User.Application\obj\Debug\net6.0\User.Application.pdb
+C:\projects\taskList\src\Services\Users\User.Application\obj\Debug\net6.0\ref\User.Application.dll

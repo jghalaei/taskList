@@ -1,0 +1,128 @@
+{
+  "format": 1,
+  "restore": {
+    "c:\\projects\\taskList\\src\\Generic\\GenericTools\\GenericTools.csproj": {}
+  },
+  "projects": {
+    "c:\\projects\\taskList\\src\\Generic\\GenericContracts\\GenericContracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\projects\\taskList\\src\\Generic\\GenericContracts\\GenericContracts.csproj",
+        "projectName": "GenericContracts",
+        "projectPath": "c:\\projects\\taskList\\src\\Generic\\GenericContracts\\GenericContracts.csproj",
+        "packagesPath": "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\",
+        "outputPath": "c:\\projects\\taskList\\src\\Generic\\GenericContracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jghalaeizadeh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Users\\jghalaeizadeh\\AppData\\Roaming\\NuGet": {},
+          "C:\\projects\\ecommerce\\src\\packages\\": {},
+          "c:\\projects\\ecommerce\\src\\packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "c:\\projects\\taskList\\src\\Generic\\GenericTools\\GenericTools.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\projects\\taskList\\src\\Generic\\GenericTools\\GenericTools.csproj",
+        "projectName": "GenericTools",
+        "projectPath": "c:\\projects\\taskList\\src\\Generic\\GenericTools\\GenericTools.csproj",
+        "packagesPath": "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\",
+        "outputPath": "c:\\projects\\taskList\\src\\Generic\\GenericTools\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jghalaeizadeh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Users\\jghalaeizadeh\\AppData\\Roaming\\NuGet": {},
+          "C:\\projects\\ecommerce\\src\\packages\\": {},
+          "c:\\projects\\ecommerce\\src\\packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "c:\\projects\\taskList\\src\\Generic\\GenericContracts\\GenericContracts.csproj": {
+                "projectPath": "c:\\projects\\taskList\\src\\Generic\\GenericContracts\\GenericContracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
