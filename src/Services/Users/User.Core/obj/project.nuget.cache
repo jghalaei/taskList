@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gugaMBt27w74SMMQH1ep88JpQqdJQVg8exvYgwRiM2tXSjrZ5kvS+tuxYO05b9i3etX58cZLrU01aFS/qx/34g==",
+  "dgSpecHash": "zH+28MtN/iDGmzMZgOC8NmtYMaKjnWyZgXWMT4UkCcAuzaNTlfq1Zzyhh1Y3JkY27GqdCvkKmvHbeXwryIcujw==",
   "success": true,
-  "projectFilePath": "c:\\projects\\taskList\\src\\Services\\Users\\User.Core\\User.Core.csproj",
+  "projectFilePath": "C:\\projects\\taskList\\src\\Services\\Users\\User.Core\\User.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

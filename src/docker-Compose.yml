@@ -1,10 +1,19 @@
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP.NET Core service.
+
 version: '3.4'
+
 services:
   UserDb:
     image: postgres
 
   pgadmin:
     image: dpage/pgadmin4
+
+  user.api:
+    image: userapi
+    build:
+      context: .
+      dockerfile: Services/Users/User.API/Dockerfile
 
 volumes:
   postgres_data:
