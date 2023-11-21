@@ -5,36 +5,45 @@ using System.Threading.Tasks;
 using AutoMapper;
 using GenericContracts.Contracts;
 using MediatR;
+using Microsoft.VisualBasic;
+using Task.Application.Accessors;
 using Task.Application.Features.Commands.ChangeTaskStatus;
+using Task.Application.ViewModels;
 using Task.Core.Entities;
 
 namespace Task.Application.Features.Commands.EditTaskCommand
 {
-    public class EditTaskCommandHandler : IRequestHandler<EditTaskCommand, Guid>
+    public class EditTaskCommandHandler : IRequestHandler<EditTaskCommand, TaskViewModel>
     {
         private readonly IRepository<TodoTask> _repository;
         private readonly IMapper _mapper;
-        private readonly Mediator _mediator;
-        public EditTaskCommandHandler(IRepository<TodoTask> repository, IMapper mapper, Mediator mediator)
+        private readonly IMediator _mediator;
+        private readonly IUserAccessor _userAccessor;
+        public EditTaskCommandHandler(IRepository<TodoTask> repository, IMapper mapper, IMediator mediator, IUserAccessor userAccessor)
         {
             _repository = repository;
             _mapper = mapper;
             _mediator = mediator;
+            _userAccessor = userAccessor;
         }
 
-        public async Task<Guid> Handle(EditTaskCommand request, CancellationToken cancellationToken)
+        public async Task<TaskViewModel> Handle(EditTaskCommand request, CancellationToken cancellationToken)
         {
             TodoTask? oldTodo = await _repository.GetByIdAsync(request.Id);
             ArgumentNullException.ThrowIfNull(oldTodo);
-            TodoTask updatingTodo = _mapper.Map<TodoTask>(request);
+            if (oldTodo.UserId != _userAccessor.UserId)
+                throw new InvalidDataException("You are not allowed to edit this task");
 
-            if (oldTodo.Status != updatingTodo.Status)
+            TodoTask updatingTodo = _mapper.Map<TodoTask>(request);
+            if  (oldTodo.Status != updatingTodo.Status)
             {
                 ChangeTaskStatusCommand cmd = new ChangeTaskStatusCommand(oldTodo.Id, updatingTodo.Status);
                 await _mediator.Send(cmd);
             }
+            updatingTodo.UserId=oldTodo.UserId;
+            updatingTodo.DueDate=updatingTodo.DueDate.ToUniversalTime();
             var result = await _repository.UpdateAsync(updatingTodo);
-            return result;
+            return _mapper.Map<TaskViewModel>(result);
         }
     }
 }

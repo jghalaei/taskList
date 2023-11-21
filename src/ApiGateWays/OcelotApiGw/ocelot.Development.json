@@ -1,0 +1,90 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/v1/User/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user.api",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/user/{id}",
+      "UpstreamHttpMethod": ["Get"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/User/signup",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user.api",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/user/signup",
+      "UpstreamHttpMethod": ["Post"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/User/login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "user.api",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/user/login",
+      "UpstreamHttpMethod": ["Post"]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Tasks/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "task.api",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/Tasks/{id}",
+      "UpstreamHttpMethod": ["Get", "Delete"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "AuthKey"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Tasks",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "task.api",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/Tasks",
+      "UpstreamHttpMethod": ["Get", "Post", "Put"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "AuthKey",
+        "AllowedScopes": []
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Tasks/Update",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "task.api",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/Tasks/Update",
+      "UpstreamHttpMethod": ["Put"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "AuthKey",
+        "AllowedScopes": []
+      }
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5000"
+  }
+}

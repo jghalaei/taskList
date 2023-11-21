@@ -22,8 +22,8 @@ namespace User.Application.Services
         {
             var claims = new Claim[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub,userId.ToString()),
-                new Claim(JwtRegisteredClaimNames.UniqueName,userName),
+                new Claim(JwtRegisteredClaimNames.Sub,userName),
+                new Claim(JwtRegisteredClaimNames.UniqueName,userId.ToString()),
             };
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secretKey));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -32,7 +32,7 @@ namespace User.Application.Services
                 issuer: _issuer,
                 audience: _audience,
                 claims: claims,
-                expires: DateTime.Now.AddHours(1),
+                expires: DateTime.Now.AddDays(2),
                 signingCredentials: creds
                 );
             string tokenString = new JwtSecurityTokenHandler().WriteToken(token);

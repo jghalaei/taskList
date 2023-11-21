@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
+using User.Application.Features.Users.Queries;
 
 namespace User.Application.Features.Users.Commands.EditUser
 {
-    public class EditUserCommand : IRequest<Guid>
+    public class EditUserCommand : IRequest<UserVm>
     {
         public EditUserCommand(Guid id, string userName, string name, string email)
         {

@@ -1,10 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using MediatR;
+using Task.Application.ViewModels;
 
 namespace Task.Application.Features.Commands.CreateTask
 {
-    public record CreateTaskCommand(Guid UserId, string Title, DateTime DueDate = default, string Comment = "") : IRequest<Guid>;
+    public record CreateTaskCommand(string Title, DateTime DueDate = default, string Comment = "") : IRequest<TaskViewModel>
+    {
+    }
 }

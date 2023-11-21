@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
+using User.Application.Features.Users.Queries;
 
 namespace User.Application.Features.Users.Commands.CreateUser
 {
-    public class CreateUserCommand : IRequest<Guid>
+    public class CreateUserCommand : IRequest<UserVm>
     {
         public CreateUserCommand(string name, string userName, string email, string password)
         {

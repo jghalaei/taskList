@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\taskList\\src\\Generic\\GenericContracts\\GenericContracts.csproj": {}
+    "C:\\projects\\tasklist\\src\\Generic\\GenericContracts\\GenericContracts.csproj": {}
   },
   "projects": {
-    "C:\\projects\\taskList\\src\\Generic\\GenericContracts\\GenericContracts.csproj": {
+    "C:\\projects\\tasklist\\src\\Generic\\GenericContracts\\GenericContracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\taskList\\src\\Generic\\GenericContracts\\GenericContracts.csproj",
+        "projectUniqueName": "C:\\projects\\tasklist\\src\\Generic\\GenericContracts\\GenericContracts.csproj",
         "projectName": "GenericContracts",
-        "projectPath": "C:\\projects\\taskList\\src\\Generic\\GenericContracts\\GenericContracts.csproj",
+        "projectPath": "C:\\projects\\tasklist\\src\\Generic\\GenericContracts\\GenericContracts.csproj",
         "packagesPath": "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\taskList\\src\\Generic\\GenericContracts\\obj\\",
+        "outputPath": "C:\\projects\\tasklist\\src\\Generic\\GenericContracts\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jghalaeizadeh\\AppData\\Roaming\\NuGet\\NuGet.Config"
