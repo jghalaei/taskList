@@ -68,20 +68,25 @@
     {
       "type": "docker-run",
       "label": "docker-run: debug",
-      "dependsOn": ["docker-build: debug"],
-      "dockerRun": {},
-      "netCore": {
-        "appProject": "${workspaceFolder}/Services/Users/User.API/User.API.csproj",
+      "dependsOn": ["docker-build"],
+      "dockerRun": {
+        "env": {
+          "DEBUG": "*",
+          "NODE_ENV": "development"
+        }
+      },
+      "node": {
+        "package": "${workspaceFolder}/Client/tasklist-app/package.json",
         "enableDebugging": true
       }
     },
     {
       "type": "docker-run",
       "label": "docker-run: release",
-      "dependsOn": ["docker-build: release"],
-      "dockerRun": {},
-      "netCore": {
-        "appProject": "${workspaceFolder}/Services/Users/User.API/User.API.csproj"
+      "dependsOn": ["docker-build"],
+      "platform": "node",
+      "node": {
+        "package": "${workspaceFolder}/Client/tasklist-app/package.json"
       }
     },
     {

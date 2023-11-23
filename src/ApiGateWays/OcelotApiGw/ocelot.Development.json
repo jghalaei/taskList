@@ -6,7 +6,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "user.api",
-          "Port": 5001
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/user/{id}",
@@ -18,7 +18,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "user.api",
-          "Port": 5001
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/user/signup",
@@ -30,7 +30,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "user.api",
-          "Port": 5001
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/user/login",
@@ -42,7 +42,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "task.api",
-          "Port": 5002
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/Tasks/{id}",
@@ -57,7 +57,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "task.api",
-          "Port": 5002
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/Tasks",
@@ -73,7 +73,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "task.api",
-          "Port": 5002
+          "Port": "80"
         }
       ],
       "UpstreamPathTemplate": "/Tasks/Update",

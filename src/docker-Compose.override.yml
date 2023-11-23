@@ -30,7 +30,7 @@ services:
       - "ASPNETCORE_ENVIRONMENT=Development"
       - "ConnectionStrings:UsersDb=Server=TaskDb;Port=5432;Database=UsersDb;User Id=admin;Password=admin1234;"
     ports:
-      - "8001:5001"
+      - "8001:80"
 
     restart: always
     depends_on:
@@ -42,7 +42,7 @@ services:
       - "ASPNETCORE_ENVIRONMENT=Development"
       - "ConnectionStrings:TaskDb=Server=TaskDb;Port=5432;Database=TaskDb;User Id=admin;Password=admin1234;"
     ports:
-      - "8002:5002"
+      - "8002:80"
 
     restart: always
     depends_on:
@@ -53,7 +53,7 @@ services:
     environment:
       - "ASPNETCORE_ENVIRONMENT=Development"
     ports:
-      - "8000:5000"
+      - "8000:80"
     restart: always
     depends_on:
       - user.api
@@ -61,8 +61,10 @@ services:
 
   tasklist.app:
     container_name: tasklist.app
+    environment:
+      - "REACT_APP_BACKEND_URL=http://localhost:8000"
     ports:
-      - "80:3000"
+      - "3000:3000"
     restart: always
     depends_on:
       - task.gateway
