@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\projects\\taskList\\src\\Services\\Users\\User.Core\\User.Core.csproj",
+      "projectUniqueName": "C:\\projects\\tasklist\\src\\Services\\Users\\User.Core\\User.Core.csproj",
       "projectName": "User.Core",
-      "projectPath": "c:\\projects\\taskList\\src\\Services\\Users\\User.Core\\User.Core.csproj",
+      "projectPath": "C:\\projects\\tasklist\\src\\Services\\Users\\User.Core\\User.Core.csproj",
       "packagesPath": "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\",
-      "outputPath": "c:\\projects\\taskList\\src\\Services\\Users\\User.Core\\obj\\",
+      "outputPath": "C:\\projects\\tasklist\\src\\Services\\Users\\User.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jghalaeizadeh\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -54,8 +54,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "c:\\projects\\taskList\\src\\Generic\\GenericContracts\\GenericContracts.csproj": {
-              "projectPath": "c:\\projects\\taskList\\src\\Generic\\GenericContracts\\GenericContracts.csproj"
+            "C:\\projects\\tasklist\\src\\Generic\\GenericContracts\\GenericContracts.csproj": {
+              "projectPath": "C:\\projects\\tasklist\\src\\Generic\\GenericContracts\\GenericContracts.csproj"
             }
           }
         }

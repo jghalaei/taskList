@@ -1,13 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\..\TaskList.Domain\TaskList.Domain.csproj" />
+    <ProjectReference Include="..\Task.Core\Task.Core.csproj" />
+    <ProjectReference Include="..\..\..\Generic\GenericTools\GenericTools.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="FluentValidation" Version="11.8.0" />
-    <PackageReference Include="Mediatr" Version="12.1.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="Microsoft.Aspnetcore.http" Version="2.2.2" />
+
   </ItemGroup>
 
   <PropertyGroup>

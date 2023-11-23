@@ -30,8 +30,6 @@ namespace Users.Controllers
         public async Task<IActionResult> Login([FromBody] LoginQuery command)
         {
             var result = await _mediator.Send(command);
-            if (string.IsNullOrEmpty(result))
-                return Unauthorized();
             return Ok(result);
         }
 

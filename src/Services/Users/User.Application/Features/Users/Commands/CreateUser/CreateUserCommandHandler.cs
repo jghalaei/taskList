@@ -1,11 +1,12 @@
 using GenericContracts.Contracts;
 using MediatR;
+using User.Application.Features.Users.Queries;
 using User.Application.PasswordHash;
 using User.Core.Entities;
 
 namespace User.Application.Features.Users.Commands.CreateUser
 {
-    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Guid>
+    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserVm>
     {
         private IRepository<AppUser> _repository;
 
@@ -14,7 +15,7 @@ namespace User.Application.Features.Users.Commands.CreateUser
             _repository = repository;
         }
 
-        public async Task<Guid> Handle(CreateUserCommand request, CancellationToken cancellationToken)
+        public async Task<UserVm> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
             string hashedPass = PasswordHasher.HashPassword(request.Password, out string salt);
             AppUser user = new AppUser()
@@ -25,7 +26,8 @@ namespace User.Application.Features.Users.Commands.CreateUser
                 Password = hashedPass,
                 Salt = salt
             };
-            return await _repository.InsertAsync(user);
+            var result = await _repository.InsertAsync(user);
+            return UserVm.MapToUserVm(result);
         }
     }
 }

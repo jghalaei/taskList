@@ -1,10 +1,37 @@
-version: '3.4'
+# Please refer https://aka.ms/HTTPSinContainer on how to setup an https developer certificate for your ASP.NET Core service.
+
+version: "3.4"
+
 services:
-  UserDb:
+  TaskDb:
     image: postgres
 
   pgadmin:
     image: dpage/pgadmin4
+
+  user.api:
+    image: user.api
+    build:
+      context: .
+      dockerfile: Services/Users/User.API/Dockerfile
+
+  task.api:
+    image: task.api
+    build:
+      context: .
+      dockerfile: Services/Tasks/Task.API/Dockerfile
+
+  task.gateway:
+    image: task.gateway
+    build:
+      context: .
+      dockerfile: ApiGateWays/OcelotApiGw/Dockerfile
+
+  tasklist.app:
+    image: tasklist.app
+    build:
+      context: .
+      dockerfile: Client/tasklist-app/Dockerfile
 
 volumes:
   postgres_data:

@@ -1,4 +1,4 @@
-c:\projects\taskList\src\Generic\GenericContracts\bin\Debug\net6.0\GenericContracts.deps.json
+C:\projects\taskList\src\Generic\GenericContracts\bin\Debug\net6.0\GenericContracts.deps.json
 C:\projects\taskList\src\Generic\GenericContracts\bin\Debug\net6.0\GenericContracts.dll
 C:\projects\taskList\src\Generic\GenericContracts\bin\Debug\net6.0\GenericContracts.pdb
 C:\projects\taskList\src\Generic\GenericContracts\obj\Debug\net6.0\GenericContracts.csproj.AssemblyReference.cache
@@ -9,4 +9,4 @@ C:\projects\taskList\src\Generic\GenericContracts\obj\Debug\net6.0\GenericContra
 C:\projects\taskList\src\Generic\GenericContracts\obj\Debug\net6.0\GenericContracts.dll
 C:\projects\taskList\src\Generic\GenericContracts\obj\Debug\net6.0\refint\GenericContracts.dll
 C:\projects\taskList\src\Generic\GenericContracts\obj\Debug\net6.0\GenericContracts.pdb
-c:\projects\taskList\src\Generic\GenericContracts\obj\Debug\net6.0\ref\GenericContracts.dll
+C:\projects\taskList\src\Generic\GenericContracts\obj\Debug\net6.0\ref\GenericContracts.dll

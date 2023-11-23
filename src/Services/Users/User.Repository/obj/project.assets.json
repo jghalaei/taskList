@@ -760,11 +760,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\projects\\taskList\\src\\Services\\Users\\User.Repository\\User.Repository.csproj",
+      "projectUniqueName": "C:\\projects\\tasklist\\src\\Services\\Users\\User.Repository\\User.Repository.csproj",
       "projectName": "User.Repository",
-      "projectPath": "c:\\projects\\taskList\\src\\Services\\Users\\User.Repository\\User.Repository.csproj",
+      "projectPath": "C:\\projects\\tasklist\\src\\Services\\Users\\User.Repository\\User.Repository.csproj",
       "packagesPath": "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\",
-      "outputPath": "c:\\projects\\taskList\\src\\Services\\Users\\User.Repository\\obj\\",
+      "outputPath": "C:\\projects\\tasklist\\src\\Services\\Users\\User.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jghalaeizadeh\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -782,11 +782,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "c:\\projects\\taskList\\src\\Generic\\GenericTools\\GenericTools.csproj": {
-              "projectPath": "c:\\projects\\taskList\\src\\Generic\\GenericTools\\GenericTools.csproj"
+            "C:\\projects\\tasklist\\src\\Generic\\GenericTools\\GenericTools.csproj": {
+              "projectPath": "C:\\projects\\tasklist\\src\\Generic\\GenericTools\\GenericTools.csproj"
             },
-            "c:\\projects\\taskList\\src\\Services\\Users\\User.Core\\User.Core.csproj": {
-              "projectPath": "c:\\projects\\taskList\\src\\Services\\Users\\User.Core\\User.Core.csproj"
+            "C:\\projects\\tasklist\\src\\Services\\Users\\User.Core\\User.Core.csproj": {
+              "projectPath": "C:\\projects\\tasklist\\src\\Services\\Users\\User.Core\\User.Core.csproj"
             }
           }
         }
