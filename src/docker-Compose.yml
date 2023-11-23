@@ -30,8 +30,8 @@ services:
   tasklist.app:
     image: tasklist.app
     build:
-      context: .
-      dockerfile: Client/tasklist-app/Dockerfile
+      context: Client/tasklist-app
+      dockerfile: Dockerfile
 
 volumes:
   postgres_data:
