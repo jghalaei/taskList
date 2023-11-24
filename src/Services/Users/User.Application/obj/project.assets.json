@@ -572,11 +572,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\projects\\taskList\\src\\Services\\Users\\User.Application\\User.Application.csproj",
+      "projectUniqueName": "C:\\projects\\tasklist\\src\\Services\\Users\\User.Application\\User.Application.csproj",
       "projectName": "User.Application",
-      "projectPath": "c:\\projects\\taskList\\src\\Services\\Users\\User.Application\\User.Application.csproj",
+      "projectPath": "C:\\projects\\tasklist\\src\\Services\\Users\\User.Application\\User.Application.csproj",
       "packagesPath": "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\",
-      "outputPath": "c:\\projects\\taskList\\src\\Services\\Users\\User.Application\\obj\\",
+      "outputPath": "C:\\projects\\tasklist\\src\\Services\\Users\\User.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jghalaeizadeh\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -594,8 +594,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "c:\\projects\\taskList\\src\\Services\\Users\\User.Core\\User.Core.csproj": {
-              "projectPath": "c:\\projects\\taskList\\src\\Services\\Users\\User.Core\\User.Core.csproj"
+            "C:\\projects\\tasklist\\src\\Services\\Users\\User.Core\\User.Core.csproj": {
+              "projectPath": "C:\\projects\\tasklist\\src\\Services\\Users\\User.Core\\User.Core.csproj"
             }
           }
         }

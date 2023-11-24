@@ -10,7 +10,6 @@ namespace Task.Application.Features.Commands.CreateTask
     {
         public CreateTaskCommandValidator()
         {
-            RuleFor(u => u.UserId).NotEmpty().WithMessage("{UserId} is required.");
             RuleFor(u => u.Title).NotEmpty().WithMessage("{Title} is required.");
         }
     }

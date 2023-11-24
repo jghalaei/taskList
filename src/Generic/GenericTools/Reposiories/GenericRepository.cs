@@ -15,15 +15,16 @@ namespace GenericTools.Repositories
             _entities = _dbContext.Set<T>();
             ArgumentNullException.ThrowIfNull(_entities);
         }
-        public async Task<Guid> InsertAsync(T entity)
+        public async Task<T> InsertAsync(T entity)
         {
+            entity.CreatedAt = DateTime.UtcNow;
             _entities.Add(entity);
             await _dbContext.SaveChangesAsync();
-            return entity.Id;
+            return entity;
 
         }
 
-        public async Task<Guid> UpdateAsync(T entity)
+        public async Task<T> UpdateAsync(T entity)
         {
             var foundEntity = await GetByIdAsync(entity.Id);
             ArgumentNullException.ThrowIfNull(foundEntity);
@@ -34,9 +35,9 @@ namespace GenericTools.Repositories
                     continue;
                 prop.SetValue(foundEntity, prop.GetValue(entity));
             }
-            foundEntity.ModifiedAt = DateTime.Now;
+            foundEntity.ModifiedAt = DateTime.UtcNow;
             await _dbContext.SaveChangesAsync();
-            return entity.Id;
+            return entity;
         }
         public async Task<bool> DeleteAsync(Guid Id)
         {
@@ -49,12 +50,12 @@ namespace GenericTools.Repositories
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {
-            return await _entities.ToListAsync();
+            return await _entities.AsNoTracking().ToListAsync();
         }
 
         public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> predicate)
         {
-            var data = await _entities.Where(predicate).ToListAsync();
+            var data = await _entities.Where(predicate).AsNoTracking().ToListAsync();
             return data;
         }
 

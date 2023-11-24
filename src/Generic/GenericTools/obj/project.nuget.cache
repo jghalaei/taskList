@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m6VggE/dFQnP7+KNR/wR19Ynd/Co7gCcfqO63c7jG8bCQPOzfixHGXsPt5q/fm7aKI6/mgWy5NbiCtksylW51g==",
+  "dgSpecHash": "WhFvLw+Fte8HGkJJMhkK9xX7wZ13g7bfp8yBcbIz+WsenifjKzADYB4L76uWY+shr37ubTQjBWIMeMiKOUlRyw==",
   "success": true,
-  "projectFilePath": "c:\\projects\\taskList\\src\\Generic\\GenericTools\\GenericTools.csproj",
+  "projectFilePath": "C:\\projects\\tasklist\\src\\Generic\\GenericTools\\GenericTools.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.13\\microsoft.entityframeworkcore.7.0.13.nupkg.sha512",
     "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.13\\microsoft.entityframeworkcore.abstractions.7.0.13.nupkg.sha512",
