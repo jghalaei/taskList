@@ -15,3 +15,4 @@ C:\projects\taskList\src\Services\Users\User.Application\obj\Debug\net6.0\User.A
 C:\projects\taskList\src\Services\Users\User.Application\obj\Debug\net6.0\refint\User.Application.dll
 C:\projects\taskList\src\Services\Users\User.Application\obj\Debug\net6.0\User.Application.pdb
 C:\projects\taskList\src\Services\Users\User.Application\obj\Debug\net6.0\ref\User.Application.dll
+C:\projects\tasklist\src\Services\Users\User.Application\obj\Debug\net6.0\User.Application.sourcelink.json

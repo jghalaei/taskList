@@ -13,3 +13,4 @@ C:\projects\taskList\src\Services\Users\User.Core\obj\Debug\net6.0\User.Core.dll
 C:\projects\taskList\src\Services\Users\User.Core\obj\Debug\net6.0\refint\User.Core.dll
 C:\projects\taskList\src\Services\Users\User.Core\obj\Debug\net6.0\User.Core.pdb
 C:\projects\taskList\src\Services\Users\User.Core\obj\Debug\net6.0\ref\User.Core.dll
+C:\projects\tasklist\src\Services\Users\User.Core\obj\Debug\net6.0\User.Core.sourcelink.json

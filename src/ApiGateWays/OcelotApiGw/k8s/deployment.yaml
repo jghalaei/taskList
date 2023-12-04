@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-gateway
+  labels:
+    app: task-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: task-gateway
+  template:
+    metadata:
+      labels:
+        app: task-gateway
+    spec:
+      imagePullSecrets:
+        - name: acr-secret
+      containers:
+        - name: task-gateway
+          image: tasklist.azurecr.io/task.gateway:latest
+          ports:
+            - containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 80
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 80
+          resources:
+            limits:
+              cpu: "1"
+              memory: "1Gi"
+            requests:
+              cpu: "0.5"
+              memory: "512Mi"
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              valueFrom:
+                configMapKeyRef:
+                  name: tasklist-config
+                  key: ASPNETCORE_ENVIRONMENT
+
+            - name: "Jwt__Key"
+              valueFrom:
+                secretKeyRef:
+                  name: mysecret
+                  key: JWT_Secret
+            - name: "Jwt__Issuer"
+              valueFrom:
+                configMapKeyRef:
+                  name: tasklist-config
+                  key: JWT_Issuer
+            - name: "Jwt__Audience"
+              valueFrom:
+                configMapKeyRef:
+                  name: tasklist-config
+                  key: JWT_Audience

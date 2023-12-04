@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kvQ25mGASkA2FX3i/E48rSLbZsuHGrqh7HRWlQLrTbddA3X6hlqiFZUteNCgBXQjRHmSz8NGp9w5D+lRtUmKUw==",
+  "dgSpecHash": "rlYuwzFMqeBnXmL0dotjRNsVwyTR8w2W9clzLr7ZuGiuZEcAfrxl+glalRgak9gktkAK2QTc6phc04W7VkqzTQ==",
   "success": true,
   "projectFilePath": "C:\\projects\\tasklist\\src\\Services\\Tasks\\Task.Application\\Task.Application.csproj",
   "expectedPackageFiles": [
@@ -31,7 +31,10 @@
     "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512"
   ],
   "logs": []
 }

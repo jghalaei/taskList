@@ -12,10 +12,18 @@ USER appuser
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 ARG configuration=Release
 WORKDIR /src
+COPY ["Generic/GenericContracts/GenericContracts.csproj", "Generic/GenericContracts/"]
+COPY ["Generic/GenericTools/GenericTools.csproj", "Generic/GenericTools/"]
+
 COPY ["Services/Users/User.API/User.API.csproj", "Services/Users/User.API/"]
+COPY ["Services/Users/User.Application/User.Application.csproj", "Services/Users/User.Application/"]
+COPY ["Services/Users/User.Core/User.Core.csproj", "Services/Users/User.Core/"]
+COPY ["Services/Users/User.Repository/User.Repository.csproj", "Services/Users/User.Repository/"]
+
 RUN dotnet restore "Services/Users/User.API/User.API.csproj"
-COPY . .
-WORKDIR "/src/Services/Users/User.API"
+COPY ["Generic/", "Generic/"]
+COPY ["Services/Users/", "Services/Users/"]
+WORKDIR /src/Services/Users/User.API
 RUN dotnet build "User.API.csproj" -c $configuration -o /app/build
 
 FROM build AS publish

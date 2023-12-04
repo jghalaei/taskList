@@ -13,11 +13,20 @@ public static class InfrastructureServiceRegistration
     {
         services.AddDbContext<TaskContext>(options =>
          {
-             options.UseNpgsql(configuration["ConnectionStrings:TaskDb"]);
+                string server= configuration["TaskDb:Server"]?? "";
+                string port = configuration["TaskDb:Port"] ?? "";
+                string database = configuration["TaskDb:Database"] ?? "";
+                string userId = configuration["TaskDb:UserId"] ?? "";
+                string Password = configuration["TaskDb:Password"] ?? "";
+                string connectionString = $"Server={server};Port={port};Database={database};User Id={userId};Password={Password};";
+
+             options.UseNpgsql(connectionString);
          });
         services.AddScoped<IRepository<TodoTask>, TodoTaskRepository>();
         services.AddScoped<IRepository<TaskHistory>, TaskHistoryRepository>();
 
         return services;
     }
+
+    
 }

@@ -17,3 +17,4 @@ C:\projects\taskList\src\Services\Users\User.Repository\obj\Debug\net6.0\User.Re
 C:\projects\taskList\src\Services\Users\User.Repository\obj\Debug\net6.0\refint\User.Repository.dll
 C:\projects\taskList\src\Services\Users\User.Repository\obj\Debug\net6.0\User.Repository.pdb
 C:\projects\taskList\src\Services\Users\User.Repository\obj\Debug\net6.0\ref\User.Repository.dll
+C:\projects\tasklist\src\Services\Users\User.Repository\obj\Debug\net6.0\User.Repository.sourcelink.json

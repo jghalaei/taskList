@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PgN7B2IOx2SsXPLVyeZer6XFpyGrlndYLe/3yJU1StEOY6SeiGztq7G67fJpdi6FCTVMKI8HzJ9LmoXtYq2VZQ==",
+  "dgSpecHash": "iJqwrpo9aYDT1Ugt7jXZW57A/vwS4dtrgnhP9mjBHnnETvmPVDUotePgJOtda1CGwpTHGc/Rk3kMu9HI0KG6ow==",
   "success": true,
   "projectFilePath": "C:\\projects\\tasklist\\src\\Services\\Users\\User.Application\\User.Application.csproj",
   "expectedPackageFiles": [
@@ -18,7 +18,10 @@
     "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.identitymodel.logging\\7.0.3\\microsoft.identitymodel.logging.7.0.3.nupkg.sha512",
     "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.0.3\\microsoft.identitymodel.tokens.7.0.3.nupkg.sha512",
     "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.0.3\\system.identitymodel.tokens.jwt.7.0.3.nupkg.sha512",
-    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512"
   ],
   "logs": []
 }

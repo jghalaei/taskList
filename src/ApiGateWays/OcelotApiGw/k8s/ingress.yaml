@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: task-gateway-ingress
+  labels:
+    name: task-gateway-ingress
+  rules:
+    - host: tasklist.com
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: task-gateway-service
+                port:
+                  number: 80

@@ -13,8 +13,16 @@ FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 ARG configuration=Release
 WORKDIR /src
 COPY ["Services/Tasks/Task.Api/Task.Api.csproj", "Services/Tasks/Task.Api/"]
+COPY ["Services/Tasks/Task.Application/Task.Application.csproj", "Services/Tasks/Task.Application/"]
+COPY ["Services/Tasks/Task.Core/Task.Core.csproj", "Services/Tasks/Task.Core/"]
+COPY ["Services/Tasks/Task.Repository/Task.Repository.csproj", "Services/Tasks/Task.Repository/"]
+
+COPY ["Generic/GenericContracts/GenericContracts.csproj", "Generic/GenericContracts/"]
+COPY ["Generic/GenericTools/GenericTools.csproj", "Generic/GenericTools/"]
+
 RUN dotnet restore "Services/Tasks/Task.Api/Task.Api.csproj"
-COPY . .
+COPY ["Generic/", "Generic/"]
+COPY ["Services/Tasks/", "Services/Tasks/"]
 WORKDIR "/src/Services/Tasks/Task.Api"
 RUN dotnet build "Task.Api.csproj" -c $configuration -o /app/build
 

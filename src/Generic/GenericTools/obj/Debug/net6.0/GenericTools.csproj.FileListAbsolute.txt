@@ -25,3 +25,4 @@ C:\projects\taskList\src\Generic\GenericTools\obj\Debug\net6.0\GenericTools.dll
 C:\projects\taskList\src\Generic\GenericTools\obj\Debug\net6.0\refint\GenericTools.dll
 C:\projects\taskList\src\Generic\GenericTools\obj\Debug\net6.0\GenericTools.pdb
 C:\projects\taskList\src\Generic\GenericTools\obj\Debug\net6.0\ref\GenericTools.dll
+C:\projects\tasklist\src\Generic\GenericTools\obj\Debug\net6.0\GenericTools.sourcelink.json

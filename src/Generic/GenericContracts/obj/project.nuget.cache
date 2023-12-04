@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+7Qk7Pz5gnt6rIJi1S3GWAQDCdluayh0so3LfdmPdq1lr7aQpi/zdhtU2KJeZKHJKIZAiRhEMFGfMOS2umAlrw==",
+  "dgSpecHash": "9trco9NgPyeAMQz5CDQXGjL74Zd54WyDVw30yH11AhdfWur+a465W/CUJIvnd0PGWShAYOT5XV1yt/+lyPUhKA==",
   "success": true,
   "projectFilePath": "C:\\projects\\tasklist\\src\\Generic\\GenericContracts\\GenericContracts.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512"
+  ],
   "logs": []
 }
