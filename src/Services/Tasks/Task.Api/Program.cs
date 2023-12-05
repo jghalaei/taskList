@@ -23,7 +23,7 @@ internal class Program
             });
 
         builder.Services.AddAuthorization();
-
+        builder.Services.AddHealthChecks();
         builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddApplicationServices();
         // Add services to the container.
@@ -48,7 +48,7 @@ internal class Program
         app.UseAuthorization();
 
         app.MapControllers();
-
+        app.MapHealthChecks("/health");
         app.Run();
     }
 }

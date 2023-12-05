@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9wo4NqqUfxjbt12sq7i6fTlNzjMRvJhInALO5+NZnW8ommMUo6kYgSHKaTzZbEVPHvuKzGIoXhz5adMHEcYJjw==",
+  "dgSpecHash": "66KU7yr0fnFRMgbjNuO2MWm2Z45zofSbqv2L54kC6GNzSr7opUJ+hocx2+bGrsqfUhmHPKchL6F7OfVMPnTaxw==",
   "success": true,
   "projectFilePath": "C:\\projects\\tasklist\\src\\ApiGateWays\\OcelotApiGw\\OcelotApiGw.csproj",
   "expectedPackageFiles": [
@@ -22,7 +22,11 @@
     "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\ocelot\\18.0.0\\ocelot.18.0.0.nupkg.sha512",
     "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
     "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.10.0\\system.identitymodel.tokens.jwt.6.10.0.nupkg.sha512",
-    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
   ],
   "logs": []
 }

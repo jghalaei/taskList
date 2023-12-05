@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "User.API/1.0.0": {
+      "User.Api/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Tools": "7.0.13",
           "Swashbuckle.AspNetCore": "6.5.0",
@@ -14,7 +14,7 @@
           "User.Repository": "1.0.0"
         },
         "runtime": {
-          "User.API.dll": {}
+          "User.Api.dll": {}
         }
       },
       "FluentValidation/11.8.0": {
@@ -482,7 +482,7 @@
     }
   },
   "libraries": {
-    "User.API/1.0.0": {
+    "User.Api/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
