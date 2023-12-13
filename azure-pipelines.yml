@@ -21,7 +21,7 @@ variables:
   imageRepository: 'jghalaeitasklist'
   containerRegistry: 'tasklist.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/src/ApiGateWays/OcelotApiGw/Dockerfile'
-  tag: 'task.gateway:$(Build.BuildId)'
+  tag: '$(Build.BuildId)'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
