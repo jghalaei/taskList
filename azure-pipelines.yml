@@ -47,7 +47,7 @@ stages:
           $(tag)
     - task: AzureCLI@2
       inputs:
-        azureSubscription: 'tasklist-aks-default'
+        azureSubscription: 'Azure-RM'
         scriptType: 'bash'
         scriptLocation: inlineScript
         inlineScript: kubectl set image deployment/task-gateway task.gateway=$(containerRegistry)/$(tag)
