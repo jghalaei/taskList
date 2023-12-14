@@ -22,7 +22,8 @@ variables:
   containerRegistry: 'tasklist.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/src/ApiGateWays/OcelotApiGw/Dockerfile'
   dockerBuildContext: '$(Build.SourcesDirectory)/src'
-  tag: '$(Build.BuildId)'
+  containerName: 'task.gateway'
+  tag: '$(containerRegistry)/$(containerName):$(Build.BuildId)'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -43,14 +44,13 @@ stages:
         dockerfile: $(dockerfilePath)
         buildContext: $(dockerBuildContext)
         containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+        tags: $(tag)
     - task: AzureCLI@2
       inputs:
         azureSubscription: 'Azure-RM'
         scriptType: 'bash'
         scriptLocation: inlineScript
-        inlineScript: kubectl set image deployment/task-gateway task.gateway=$(containerRegistry)/$(tag)
+        inlineScript: kubectl set image deployment/task-gateway task.gateway=$(tag)
         addSpnToEnvironment: true
     
       
