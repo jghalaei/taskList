@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-api
+  labels:
+    app: user-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-api
+  template:
+    metadata:
+      labels:
+        app: user-api
+    spec:
+      imagePullSecrets:
+        - name: acr-secret
+      containers:
+        - name: user-api
+          image: tasklist.azurecr.io/user.api:latest
+          ports:
+            - containerPort: 5001
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5001
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5001
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Development
+            - name: "UsersDb__Server"
+              valueFrom:
+                configMapKeyRef:
+                  name: tasklist-config
+                  key: UsersDb_Server
+
+            - name: "UsersDb__Port"
+              valueFrom:
+                configMapKeyRef:
+                  name: tasklist-config
+                  key: UsersDb_Port
+
+            - name: "UsersDb__Database"
+              valueFrom:
+                configMapKeyRef:
+                  name: tasklist-config
+                  key: UsersDb_Database
+            - name: "UsersDb__UserId"
+              valueFrom:
+                secretKeyRef:
+                  name: mysecret
+                  key: UsersDb_username
+            - name: "UsersDb__Password"
+              valueFrom:
+                secretKeyRef:
+                  name: mysecret
+                  key: UsersDb_password
+
+            - name: "Jwt__Key"
+              valueFrom:
+                secretKeyRef:
+                  name: mysecret
+                  key: JWT_Secret
+            - name: "Jwt__Issuer"
+              valueFrom:
+                configMapKeyRef:
+                  name: tasklist-config
+                  key: JWT_Issuer
+            - name: "Jwt__Audience"
+              valueFrom:
+                configMapKeyRef:
+                  name: tasklist-config
+                  key: JWT_Audience

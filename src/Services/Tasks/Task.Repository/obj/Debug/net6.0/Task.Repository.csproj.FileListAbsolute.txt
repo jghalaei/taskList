@@ -17,3 +17,4 @@ C:\projects\taskList\src\Services\Tasks\Task.Repository\obj\Debug\net6.0\Task.Re
 C:\projects\taskList\src\Services\Tasks\Task.Repository\obj\Debug\net6.0\refint\Task.Repository.dll
 C:\projects\taskList\src\Services\Tasks\Task.Repository\obj\Debug\net6.0\Task.Repository.pdb
 C:\projects\taskList\src\Services\Tasks\Task.Repository\obj\Debug\net6.0\ref\Task.Repository.dll
+C:\projects\tasklist\src\Services\Tasks\Task.Repository\obj\Debug\net6.0\Task.Repository.sourcelink.json

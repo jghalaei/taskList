@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9cf2DVda6Vc1JcXiE9J5v3xOK++LEhTdGwHgxXGuwPvbvlNww+/U5FewFlrxEAHX4kE97kiFqTQHFVxzMxxEoA==",
+  "dgSpecHash": "P5pP2U0Bd2oyfGFk0BJWyDUHA3Sn3GMtMNQAjI2Px9FYVZrB8Zz7D0K413DqP37KmmD/LUs0EZL6Uzlsit0gfQ==",
   "success": true,
   "projectFilePath": "C:\\projects\\tasklist\\src\\Services\\Users\\User.Repository\\User.Repository.csproj",
   "expectedPackageFiles": [
@@ -20,7 +20,10 @@
     "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\npgsql\\7.0.6\\npgsql.7.0.6.nupkg.sha512",
     "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\7.0.11\\npgsql.entityframeworkcore.postgresql.7.0.11.nupkg.sha512",
-    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512"
   ],
   "logs": []
 }

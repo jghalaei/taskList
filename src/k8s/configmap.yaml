@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tasklist-config
+  labels:
+    app: tasklist
+data:
+  ASPNETCORE_ENVIRONMENT: "Production"
+
+  TaskDb_Server: "tasklist-jamshid-db.postgres.database.azure.com"
+  TaskDb_Port: "5432"
+  TaskDb_Database: "postgres"
+
+  UsersDb_Server: "tasklist-jamshid-db.postgres.database.azure.com"
+  UsersDb_Port: "5432"
+  UsersDb_Database: "postgres"
+
+  JWT_Issuer: "user.api"
+  JWT_Audience: "task.api"
