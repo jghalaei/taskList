@@ -18,6 +18,7 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'AzureACR'
+  azureSubscription: 'Azure-RM'
   imageRepository: 'task.gateway'
   containerRegistry: 'tasklist.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/src/ApiGateWays/OcelotApiGw/Dockerfile'
@@ -46,7 +47,7 @@ stages:
         tags: $(tag)
     - task: AzureCLI@2
       inputs:
-        azureSubscription: 'Azure-RM'
+        azureSubscription: $(azureSubscription)
         scriptType: 'ps'
         scriptLocation: inlineScript
         inlineScript: kubectl set image deployment/task-gateway task-gateway=$(imageRepository):$(tag)
