@@ -49,7 +49,7 @@ stages:
         azureSubscription: 'Azure-RM'
         scriptType: 'ps'
         scriptLocation: inlineScript
-        inlineScript: kubectl set image deployment/task-gateway task.gateway=$(containerRegistry)/$(imageRepository):$(tag)
+        inlineScript: kubectl set image deployment/task-gateway task-gateway=$(imageRepository):$(tag)
         addSpnToEnvironment: true
     
       
