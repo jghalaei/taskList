@@ -47,7 +47,7 @@ stages:
     - task: AzureCLI@2
       inputs:
         azureSubscription: 'Azure-RM'
-        scriptType: 'bash'
+        scriptType: 'ps'
         scriptLocation: inlineScript
         inlineScript: kubectl set image deployment/task-gateway task.gateway=$(tag)
         addSpnToEnvironment: true
