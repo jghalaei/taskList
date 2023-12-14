@@ -18,12 +18,11 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'AzureACR'
-  imageRepository: 'jghalaeitasklist'
+  imageRepository: 'task.gateway'
   containerRegistry: 'tasklist.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/src/ApiGateWays/OcelotApiGw/Dockerfile'
   dockerBuildContext: '$(Build.SourcesDirectory)/src'
-  containerName: 'task.gateway'
-  tag: '$(containerRegistry)/$(containerName):$(Build.BuildId)'
+  tag: '$(Build.BuildId)'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
