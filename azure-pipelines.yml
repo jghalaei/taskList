@@ -17,7 +17,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '9437b7ad-6f35-4620-abec-126da1e70747'
+  dockerRegistryServiceConnection: 'AzureACR'
   imageRepository: 'jghalaeitasklist'
   containerRegistry: 'tasklist.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/src/ApiGateWays/OcelotApiGw/Dockerfile'
