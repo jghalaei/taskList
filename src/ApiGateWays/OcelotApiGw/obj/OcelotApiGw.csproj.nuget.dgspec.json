@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\tasklist\\src\\ApiGateWays\\OcelotApiGw\\OcelotApiGw.csproj": {}
+    "c:\\projects\\taskList\\src\\ApiGateWays\\OcelotApiGw\\OcelotApiGw.csproj": {}
   },
   "projects": {
-    "C:\\projects\\tasklist\\src\\ApiGateWays\\OcelotApiGw\\OcelotApiGw.csproj": {
+    "c:\\projects\\taskList\\src\\ApiGateWays\\OcelotApiGw\\OcelotApiGw.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\tasklist\\src\\ApiGateWays\\OcelotApiGw\\OcelotApiGw.csproj",
+        "projectUniqueName": "c:\\projects\\taskList\\src\\ApiGateWays\\OcelotApiGw\\OcelotApiGw.csproj",
         "projectName": "OcelotApiGw",
-        "projectPath": "C:\\projects\\tasklist\\src\\ApiGateWays\\OcelotApiGw\\OcelotApiGw.csproj",
+        "projectPath": "c:\\projects\\taskList\\src\\ApiGateWays\\OcelotApiGw\\OcelotApiGw.csproj",
         "packagesPath": "C:\\Users\\jghalaeizadeh\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\tasklist\\src\\ApiGateWays\\OcelotApiGw\\obj\\",
+        "outputPath": "c:\\projects\\taskList\\src\\ApiGateWays\\OcelotApiGw\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jghalaeizadeh\\AppData\\Roaming\\NuGet\\NuGet.Config"
