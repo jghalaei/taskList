@@ -42,7 +42,11 @@ spec:
                 configMapKeyRef:
                   name: tasklist-config
                   key: ASPNETCORE_ENVIRONMENT
-
+            - name: "AllowedCors"
+              valueFrom:
+                configMapKeyRef:
+                  name: tasklist-config
+                  key: AllowedCors
             - name: "Jwt__Key"
               valueFrom:
                 secretKeyRef:

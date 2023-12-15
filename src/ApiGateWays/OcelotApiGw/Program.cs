@@ -12,7 +12,7 @@ internal class Program
         builder.Configuration.AddJsonFile($"ocelot.{builder.Environment.EnvironmentName}.json");
         builder.Logging.AddConsole();
         builder.Logging.AddDebug();
-    builder.Services.AddHealthChecks();
+        builder.Services.AddHealthChecks();
         var authenticationProviderKey = "AuthKey";
         builder.Services.AddAuthentication()
             .AddJwtBearer(authenticationProviderKey, options =>
@@ -30,7 +30,7 @@ internal class Program
         builder.Services.AddCors(options =>
         {
             options.AddPolicy("CorsPolicy",
-                builder => builder.WithOrigins("http://localhost:3000")
+                bld => bld.WithOrigins(builder.Configuration["AllowedCors"])
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials()
@@ -41,7 +41,7 @@ internal class Program
 
         var app = builder.Build();
         app.UseCors("CorsPolicy");
-        app.MapGet("/", () => "Hello World!");  
+        app.MapGet("/", () => "Hello World!");
         app.UseHealthChecks("/health");
         app.UseOcelot().Wait();
         app.Run();

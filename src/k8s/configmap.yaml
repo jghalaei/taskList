@@ -6,7 +6,7 @@ metadata:
     app: tasklist
 data:
   ASPNETCORE_ENVIRONMENT: "Production"
-
+  AllowedCors: "*"
   TaskDb_Server: "tasklist-jamshid-db.postgres.database.azure.com"
   TaskDb_Port: "5432"
   TaskDb_Database: "postgres"
