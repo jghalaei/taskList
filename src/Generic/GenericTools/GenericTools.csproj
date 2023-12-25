@@ -8,6 +8,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.13" />
+    <PackageReference Include="serilog.AspnetCore" Version="8.0.0" />
+    <PackageReference Include="serilog.enrichers.correlationid" Version="3.0.1" />
+    <PackageReference Include="serilog.Enrichers.Environment" Version="2.3.0" />
+    <PackageReference Include="serilog.sinks.elasticsearch" Version="9.0.3" />
   </ItemGroup>
 
   <ItemGroup>

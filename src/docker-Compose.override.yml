@@ -24,13 +24,47 @@ services:
     volumes:
       - pgadmin_data:/root/.pgadmin
 
+  elasticsearch:
+    container_name: elasticsearch
+    ports:
+      - 9200:9200
+    restart: always
+    environment:
+      - xpack.security.enabled=false
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+
+  kibana:
+    container_name: kibana
+    ports:
+      - 5601:5601
+    restart: always
+    environment:
+      - ELASTICSEARCH_URL=http://localhost:9200
+    depends_on:
+      - elasticsearch
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:3.9.9-management-alpine
+    ports:
+      - 5672:5672
+      - 15672:15672
+    restart: always
+
   user.api:
     container_name: user.api
     environment:
       - "ASPNETCORE_ENVIRONMENT=Development"
-      - "ConnectionStrings:UsersDb=Server=TaskDb;Port=5432;Database=UsersDb;User Id=admin;Password=admin1234;"
+      - "UsersDb:Server=TaskDb"
+      - "UsersDb:Port=5432"
+      - "UsersDb:Database=UsersDb"
+      - "UsersDb:UserId=admin"
+      - "UsersDb:Password=admin1234"
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     ports:
-      - "8001:80"
+      - "5004:80"
 
     restart: always
     depends_on:
@@ -40,9 +74,14 @@ services:
     container_name: task.api
     environment:
       - "ASPNETCORE_ENVIRONMENT=Development"
-      - "ConnectionStrings:TaskDb=Server=TaskDb;Port=5432;Database=TaskDb;User Id=admin;Password=admin1234;"
+      - "TaskDb:Server=TaskDb"
+      - "TaskDb:Port=5432"
+      - "TaskDb:Database=TaskDb"
+      - "TaskDb:UserId=admin"
+      - "TaskDb:Password=admin1234"
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     ports:
-      - "8002:80"
+      - "5003:80"
 
     restart: always
     depends_on:
@@ -52,8 +91,9 @@ services:
     container_name: task.gateway
     environment:
       - "ASPNETCORE_ENVIRONMENT=Development"
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     ports:
-      - "8000:80"
+      - "5000:80"
     restart: always
     depends_on:
       - user.api

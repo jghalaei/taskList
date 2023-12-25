@@ -2,12 +2,15 @@ using Task.Repository;
 using Task.Application;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using GenericTools.Logger;
 internal class Program
 {
     private static void Main(string[] args)
     {
 
         var builder = WebApplication.CreateBuilder(args);
+        builder.Host.UseCustomSerilog();
+        builder.Services.AddHttpContextAccessor();
         builder.Services.AddAuthentication("Bearer")
             .AddJwtBearer("Bearer", options =>
             {

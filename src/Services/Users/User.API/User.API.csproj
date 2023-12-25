@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\User.Application\User.Application.csproj" />
     <ProjectReference Include="..\User.Repository\User.Repository.csproj" />
+    <ProjectReference Include="..\..\..\Generic\GenericTools\GenericTools.csproj" />
   </ItemGroup>
 
 </Project>

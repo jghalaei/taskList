@@ -1,8 +1,8 @@
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
-EXPOSE 5001
+EXPOSE 80
 
-ENV ASPNETCORE_URLS=http://+:5001
+ENV ASPNETCORE_URLS=http://+:80
 
 # Creates a non-root user with an explicit UID and adds permission to access the /app folder
 # For more info, please refer to https://aka.ms/vscode-docker-dotnet-configure-containers
@@ -12,8 +12,10 @@ USER appuser
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 ARG configuration=Release
 WORKDIR /src
+
 COPY ["Generic/GenericContracts/GenericContracts.csproj", "Generic/GenericContracts/"]
 COPY ["Generic/GenericTools/GenericTools.csproj", "Generic/GenericTools/"]
+RUN dotnet restore "Generic/GenericTools/GenericTools.csproj"
 
 COPY ["Services/Users/User.API/User.API.csproj", "Services/Users/User.API/"]
 COPY ["Services/Users/User.Application/User.Application.csproj", "Services/Users/User.Application/"]
@@ -21,8 +23,8 @@ COPY ["Services/Users/User.Core/User.Core.csproj", "Services/Users/User.Core/"]
 COPY ["Services/Users/User.Repository/User.Repository.csproj", "Services/Users/User.Repository/"]
 
 RUN dotnet restore "Services/Users/User.API/User.API.csproj"
-COPY ["Generic/", "Generic/"]
-COPY ["Services/Users/", "Services/Users/"]
+COPY ["Generic/.", "Generic/"]
+COPY ["Services/Users/.", "Services/Users/"]
 WORKDIR /src/Services/Users/User.API
 RUN dotnet build "User.API.csproj" -c $configuration -o /app/build
 

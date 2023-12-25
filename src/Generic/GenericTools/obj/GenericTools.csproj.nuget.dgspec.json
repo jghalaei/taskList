@@ -118,6 +118,22 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.13, )"
+            },
+            "serilog.AspnetCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "serilog.Enrichers.Environment": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "serilog.enrichers.correlationid": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
+            "serilog.sinks.elasticsearch": {
+              "target": "Package",
+              "version": "[9.0.3, )"
             }
           },
           "imports": [
