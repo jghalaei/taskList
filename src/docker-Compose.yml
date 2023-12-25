@@ -9,6 +9,15 @@ services:
   pgadmin:
     image: dpage/pgadmin4
 
+  elasticsearch:
+    image: elasticsearch:7.9.3
+
+  kibana:
+    image: kibana:7.9.3
+
+  rabbitmq:
+    image: rabbitmq:3.9.9-management-alpine
+
   user.api:
     image: user.api
     build:
@@ -33,6 +42,12 @@ services:
       context: Client/tasklist-app
       dockerfile: Dockerfile
 
+networks:
+  elastic:
+    driver: bridge
+
 volumes:
   postgres_data:
   pgadmin_data:
+  elasticsearch_data:
+  kibana_data:

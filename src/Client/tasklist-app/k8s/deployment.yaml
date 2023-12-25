@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tasklist-app
+  labels:
+    app: tasklist-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tasklist-app
+  template:
+    metadata:
+      labels:
+        app: tasklist-app
+    spec:
+      imagePullSecrets:
+        - name: acr-secret
+      containers:
+        - name: tasklist-app
+          image: tasklist.azurecr.io/tasklist.app:latest
+          ports:
+            - containerPort: 80
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 80
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 80
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "1Gi"
+            requests:
+              cpu: "250m"
+              memory: "512Mi"
+          env:
+            - name: REACT_APP_BACKEND_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: tasklist-config
+                  key: REACT_APP_BACKEND_URL

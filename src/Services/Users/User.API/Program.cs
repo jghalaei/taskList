@@ -1,8 +1,12 @@
-using Microsoft.IdentityModel.Tokens;
-using User.Application.Services;
 using User.Repository;
 using User.Application;
+using GenericTools.Logger;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseCustomSerilog();
+builder.Services.AddHttpContextAccessor();
 // Add services to the container.
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationServices(builder.Configuration);
@@ -28,5 +32,6 @@ app.UseAuthorization();
 
 app.MapGet("/", () => "Users API");
 app.MapControllers();
-app.MapHealthChecks("/health"); 
+app.MapHealthChecks("/health");
 app.Run();
+

@@ -12,6 +12,9 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="serilog.aspnetCore" Version="8.0.0" />
+    <PackageReference Include="serilog.Enrichers.Environment" Version="2.3.0" />
+    <PackageReference Include="serilog.Sinks.elasticsearch" Version="9.0.3" />
 
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
@@ -19,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Task.Application\Task.Application.csproj" />
     <ProjectReference Include="..\Task.Repository\Task.Repository.csproj" />
+    <ProjectReference Include="..\..\..\Generic\GenericTools\GenericTools.csproj"/>
   </ItemGroup>
 
 </Project>

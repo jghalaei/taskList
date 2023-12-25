@@ -3,15 +3,19 @@ using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using GenericTools.Logger;
+using OcelotApiGw;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        builder.Host.UseCustomSerilog();
+        builder.Services.AddHttpContextAccessor();
         builder.Configuration.AddJsonFile($"ocelot.{builder.Environment.EnvironmentName}.json");
-        builder.Logging.AddConsole();
-        builder.Logging.AddDebug();
+        // builder.Logging.AddConsole();
+        // builder.Logging.AddDebug();
         builder.Services.AddHealthChecks();
         var authenticationProviderKey = "AuthKey";
         builder.Services.AddAuthentication()
@@ -37,7 +41,8 @@ internal class Program
                     );
         });
 
-        builder.Services.AddOcelot();
+        builder.Services.AddOcelot()
+        .AddDelegatingHandler<CorrelationIdDelgatingHandler>();
 
         var app = builder.Build();
         app.UseCors("CorsPolicy");
