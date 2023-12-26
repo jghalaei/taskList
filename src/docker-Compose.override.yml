@@ -24,6 +24,17 @@ services:
     volumes:
       - pgadmin_data:/root/.pgadmin
 
+  reportDb:
+    container_name: reportDb
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin1234
+    ports:
+      - "27017:27017"
+    volumes:
+      - reportDb_data:/data/db
+
   elasticsearch:
     container_name: elasticsearch
     ports:

@@ -6,6 +6,9 @@ services:
   TaskDb:
     image: postgres
 
+  reportDb:
+    image: mongo
+
   pgadmin:
     image: dpage/pgadmin4
 
@@ -48,6 +51,7 @@ networks:
 
 volumes:
   postgres_data:
+  reportDb_data:
   pgadmin_data:
   elasticsearch_data:
   kibana_data:
