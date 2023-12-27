@@ -16,11 +16,11 @@ COPY ["ApiGateWays/OcelotApiGw/OcelotApiGw.csproj", "ApiGateWays/OcelotApiGw/"]
 RUN dotnet restore "ApiGateWays/OcelotApiGw/OcelotApiGw.csproj"
 COPY . .
 WORKDIR "/src/ApiGateWays/OcelotApiGw"
-RUN dotnet build "OcelotApiGw.csproj" -c $configuration -o /app/build
+RUN dotnet build "OcelotApiGw.csproj" -c "$configuration" -o /app/build
 
 FROM build AS publish
 ARG configuration=Release
-RUN dotnet publish "OcelotApiGw.csproj" -c $configuration -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "OcelotApiGw.csproj" -c "$configuration" -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

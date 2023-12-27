@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GenericContracts.Contracts;
+using GenericContracts.EventBusMessages;
+using MassTransit;
 using MediatR;
 using Task.Application.Accessors;
 using Task.Core.Entities;
@@ -14,11 +16,13 @@ namespace Task.Application.Features.Commands.ChangeTaskStatus
         IRepository<TaskHistory> _historyRepository;
         IRepository<TodoTask> _todoRepository;
         IUserAccessor _accessor;
-        public ChangeTaskStatusCommandHandler(IRepository<TaskHistory> historyRepository, IRepository<TodoTask> todoRepository, IUserAccessor accessor)
+        IPublishEndpoint _publishEndpoint;
+        public ChangeTaskStatusCommandHandler(IRepository<TaskHistory> historyRepository, IRepository<TodoTask> todoRepository, IUserAccessor accessor, IPublishEndpoint publishEndpoint)
         {
             _historyRepository = historyRepository;
             _todoRepository = todoRepository;
             _accessor = accessor;
+            _publishEndpoint = publishEndpoint;
         }
 
 
@@ -38,9 +42,10 @@ namespace Task.Application.Features.Commands.ChangeTaskStatus
                 NewStatus = request.Status
             };
             todo.Status = request.Status;
-            todo.DueDate=todo.DueDate.ToUniversalTime();
+            todo.DueDate = todo.DueDate.ToUniversalTime();
             await _todoRepository.UpdateAsync(todo);
             await _historyRepository.InsertAsync(history);
+            await _publishEndpoint.Publish(new TaskStatusUpdatedEvent(todo.UserId, todo.DueDate, history.OldStatus, history.NewStatus));
             return todo.Id;
         }
     }

@@ -1,4 +1,5 @@
 using GenericContracts.Common;
+using GenericContracts.EventBusMessages;
 
 namespace Task.Core.Entities;
 

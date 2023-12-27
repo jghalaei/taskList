@@ -24,6 +24,17 @@ services:
     volumes:
       - pgadmin_data:/root/.pgadmin
 
+  reportDb:
+    container_name: reportDb
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin1234
+    ports:
+      - "27017:27017"
+    volumes:
+      - reportDb_data:/data/db
+
   elasticsearch:
     container_name: elasticsearch
     ports:
@@ -51,6 +62,9 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin1234
     restart: always
 
   user.api:
@@ -64,7 +78,7 @@ services:
       - "UsersDb:Password=admin1234"
       - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     ports:
-      - "5004:80"
+      - "5001:80"
 
     restart: always
     depends_on:
@@ -80,12 +94,21 @@ services:
       - "TaskDb:UserId=admin"
       - "TaskDb:Password=admin1234"
       - "ElasticConfiguration:Uri=http://elasticsearch:9200"
+      - "EventBusSettings:HostAddress=amqp://admin:admin1234@rabbitmq:5672"
+    restart: always
+    ports:
+      - "5002:80"
+
+  reporting.api:
+    container_name: report.api
+    environment:
+      - "ASPNETCORE_ENVIRONMENT=Development"
+      - "DatabaseSettings:ConnectionString=mongodb://admin:admin1234@reportDb:27017"
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
+      - "EventBusSettings:HostAddress=amqp://admin:admin1234@rabbitmq:5672"
     ports:
       - "5003:80"
-
     restart: always
-    depends_on:
-      - TaskDb
 
   task.gateway:
     container_name: task.gateway

@@ -6,6 +6,9 @@ services:
   TaskDb:
     image: postgres
 
+  reportDb:
+    image: mongo
+
   pgadmin:
     image: dpage/pgadmin4
 
@@ -30,6 +33,12 @@ services:
       context: .
       dockerfile: Services/Tasks/Task.API/Dockerfile
 
+  reporting.api:
+    image: report.api
+    build:
+      context: .
+      dockerfile: Services/Reporting/Dockerfile
+
   task.gateway:
     image: task.gateway
     build:
@@ -48,6 +57,7 @@ networks:
 
 volumes:
   postgres_data:
+  reportDb_data:
   pgadmin_data:
   elasticsearch_data:
   kibana_data:
