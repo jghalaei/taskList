@@ -3,6 +3,8 @@ using Task.Application;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using GenericTools.Logger;
+
+namespace Task.Api;
 internal class Program
 {
     private static void Main(string[] args)
@@ -28,7 +30,7 @@ internal class Program
         builder.Services.AddAuthorization();
         builder.Services.AddHealthChecks();
         builder.Services.AddInfrastructureServices(builder.Configuration);
-        builder.Services.AddApplicationServices();
+        builder.Services.AddApplicationServices(builder.Configuration);
         // Add services to the container.
         //builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddControllers();

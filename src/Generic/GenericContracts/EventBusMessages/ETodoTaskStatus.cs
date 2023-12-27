@@ -1,4 +1,4 @@
-namespace Task.Core.Entities;
+namespace GenericContracts.EventBusMessages;
 
 public enum ETodoTaskStatus
 {

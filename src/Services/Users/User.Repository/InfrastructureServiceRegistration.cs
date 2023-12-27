@@ -17,18 +17,17 @@ namespace User.Repository
         {
             services.AddDbContext<UsersContext>(options =>
             {
-                //  "Server=localhost;Port=5432;Database=UsersDb;User Id=admin;Password=admin1234;"
-                string server= configuration["UsersDb:Server"]?? "";
+                string server = configuration["UsersDb:Server"] ?? "";
                 string port = configuration["UsersDb:Port"] ?? "";
                 string database = configuration["UsersDb:Database"] ?? "";
                 string userId = configuration["UsersDb:UserId"] ?? "";
                 string Password = configuration["UsersDb:Password"] ?? "";
                 string connectionString = $"Server={server};Port={port};Database={database};User Id={userId};Password={Password};";
                 options.UseNpgsql(connectionString);
-                
+
 
             });
-            
+
             services.AddScoped<IRepository<AppUser>, UserRepository>();
             return services;
         }
