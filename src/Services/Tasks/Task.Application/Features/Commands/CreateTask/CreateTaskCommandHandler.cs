@@ -28,11 +28,13 @@ namespace Task.Application.Features.Commands.CreateTask
             var todo = _mapper.Map<TodoTask>(request);
             todo.UserId = _userAccessor.UserId;
             if (await _repository.GetOneAsync(t => t.Title == todo.Title && t.UserId == todo.UserId) != null)
+            {
                 throw new InvalidDataException("Task already exists");
+            }
             todo.DueDate = todo.DueDate.ToUniversalTime();
             var addedTask = await _repository.InsertAsync(todo);
 
-            await _publishEndpoint.Publish(new TaskCreatedEvent(addedTask.UserId, addedTask.DueDate));
+            await _publishEndpoint.Publish(new TaskCreatedEvent(addedTask.UserId, addedTask.DueDate), cancellationToken);
 
             return _mapper.Map<TaskViewModel>(addedTask);
 

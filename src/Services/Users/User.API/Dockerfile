@@ -26,11 +26,11 @@ RUN dotnet restore "Services/Users/User.API/User.API.csproj"
 COPY ["Generic/.", "Generic/"]
 COPY ["Services/Users/.", "Services/Users/"]
 WORKDIR /src/Services/Users/User.API
-RUN dotnet build "User.API.csproj" -c $configuration -o /app/build
+RUN dotnet build "User.API.csproj" -c "$configuration" -o /app/build
 
 FROM build AS publish
 ARG configuration=Release
-RUN dotnet publish "User.API.csproj" -c $configuration -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "User.API.csproj" -c "$configuration" -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

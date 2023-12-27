@@ -7,7 +7,7 @@ namespace User.Application.Features.Users.Commands.EditUser
 {
     public class EditUserCommandHandler : IRequestHandler<EditUserCommand, UserVm>
     {
-        IRepository<AppUser> _repository;
+        private readonly IRepository<AppUser> _repository;
         public EditUserCommandHandler(IRepository<AppUser> repository)
         {
             _repository = repository;
@@ -21,7 +21,7 @@ namespace User.Application.Features.Users.Commands.EditUser
             user.Name = request.Name;
             user.UserName = request.UserName;
             user.Email = request.Email;
-            var result= await _repository.UpdateAsync(user);
+            var result = await _repository.UpdateAsync(user);
             return UserVm.MapToUserVm(result);
         }
     }

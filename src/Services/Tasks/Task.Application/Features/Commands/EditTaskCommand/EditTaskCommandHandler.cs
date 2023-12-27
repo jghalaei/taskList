@@ -35,13 +35,13 @@ namespace Task.Application.Features.Commands.EditTaskCommand
                 throw new InvalidDataException("You are not allowed to edit this task");
 
             TodoTask updatingTodo = _mapper.Map<TodoTask>(request);
-            if  (oldTodo.Status != updatingTodo.Status)
+            if (oldTodo.Status != updatingTodo.Status)
             {
                 ChangeTaskStatusCommand cmd = new ChangeTaskStatusCommand(oldTodo.Id, updatingTodo.Status);
-                await _mediator.Send(cmd);
+                await _mediator.Send(cmd, cancellationToken);
             }
-            updatingTodo.UserId=oldTodo.UserId;
-            updatingTodo.DueDate=updatingTodo.DueDate.ToUniversalTime();
+            updatingTodo.UserId = oldTodo.UserId;
+            updatingTodo.DueDate = updatingTodo.DueDate.ToUniversalTime();
             var result = await _repository.UpdateAsync(updatingTodo);
             return _mapper.Map<TaskViewModel>(result);
         }

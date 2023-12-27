@@ -2,8 +2,6 @@ using User.Repository;
 using User.Application;
 using GenericTools.Logger;
 
-
-
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseCustomSerilog();
 builder.Services.AddHttpContextAccessor();

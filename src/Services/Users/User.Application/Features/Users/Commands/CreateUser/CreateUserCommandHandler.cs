@@ -8,7 +8,7 @@ namespace User.Application.Features.Users.Commands.CreateUser
 {
     public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, UserVm>
     {
-        private IRepository<AppUser> _repository;
+        private readonly IRepository<AppUser> _repository;
 
         public CreateUserCommandHandler(IRepository<AppUser> repository)
         {
@@ -18,14 +18,7 @@ namespace User.Application.Features.Users.Commands.CreateUser
         public async Task<UserVm> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
             string hashedPass = PasswordHasher.HashPassword(request.Password, out string salt);
-            AppUser user = new AppUser()
-            {
-                Name = request.Name,
-                UserName = request.UserName,
-                Email = request.Email,
-                Password = hashedPass,
-                Salt = salt
-            };
+            AppUser user = new AppUser(request.Name, request.UserName, request.Email, hashedPass, salt);
             var result = await _repository.InsertAsync(user);
             return UserVm.MapToUserVm(result);
         }

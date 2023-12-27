@@ -12,7 +12,7 @@ namespace Reporting.EventBusConsumer
 {
     public class TaskUpdatedConsumer : IConsumer<TaskStatusUpdatedEvent>
     {
-        IReportRepository _repository;
+        private readonly IReportRepository _repository;
 
         public TaskUpdatedConsumer(IReportRepository repository)
         {
@@ -25,15 +25,11 @@ namespace Reporting.EventBusConsumer
             Report report = await _repository.GetOneAsync(rpt => rpt.UserID == message.UserId) ?? new Report(message.UserId, message.CreationDate, message.DueDate);
             string oldStatusStr = message.OldStatus.ToString();
             string newStatusStr = message.NewStatus.ToString();
-            if (report.TaskStats.ContainsKey(oldStatusStr))
+            if (!report.TaskStats.TryAdd(oldStatusStr, 0))
                 report.TaskStats[oldStatusStr] -= 1;
-            else
-                report.TaskStats.Add(oldStatusStr, 0);
 
-            if (report.TaskStats.ContainsKey(newStatusStr))
+            if (!report.TaskStats.TryAdd(newStatusStr, 1))
                 report.TaskStats[newStatusStr] += 1;
-            else
-                report.TaskStats.Add(newStatusStr, 1);
 
             report.ReportDate = message.CreationDate;
             report.DueDate = message.DueDate;

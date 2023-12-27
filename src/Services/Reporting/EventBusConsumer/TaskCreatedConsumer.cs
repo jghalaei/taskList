@@ -12,8 +12,8 @@ namespace Reporting.EventBusConsumer
 {
     public class TaskCreatedConsumer : IConsumer<TaskCreatedEvent>
     {
-        IReportRepository _repository;
-        ILogger<TaskCreatedConsumer> _logger;
+        private readonly IReportRepository _repository;
+        private readonly ILogger<TaskCreatedConsumer> _logger;
 
         public TaskCreatedConsumer(IReportRepository repository, ILogger<TaskCreatedConsumer> logger)
         {
@@ -27,11 +27,8 @@ namespace Reporting.EventBusConsumer
             var message = context.Message;
             Report report = await _repository.GetOneAsync(rpt => rpt.UserID == message.UserId) ?? new Report(
                 message.UserId, message.CreationDate, message.DueDate);
-
-            if (report.TaskStats.ContainsKey("Created"))
+            if (!report.TaskStats.TryAdd("Created", 1))
                 report.TaskStats["Created"] += 1;
-            else
-                report.TaskStats.Add("Created", 1);
             report.ReportDate = message.CreationDate;
             report.DueDate = message.DueDate;
             await _repository.InsertUpdateAsync(report);

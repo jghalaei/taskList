@@ -13,11 +13,10 @@ namespace Users.Controllers
     {
 
         private readonly IMediator _mediator;
-        private readonly ILogger<AppUser> _logger;
-        public UserController(IMediator mediator, ILogger<AppUser> logger)
+
+        public UserController(IMediator mediator)
         {
             _mediator = mediator;
-            _logger = logger;
         }
 
         [HttpPost("singup")]

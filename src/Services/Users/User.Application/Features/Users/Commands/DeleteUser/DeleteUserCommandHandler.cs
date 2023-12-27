@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using GenericContracts.Contracts;
 using MediatR;
 using User.Core.Entities;
@@ -6,7 +7,7 @@ namespace User.Application.Features.Users.Commands.DeleteUser
 {
     public class DeleteUserCommandHandler : IRequestHandler<DeleteUserCommand, bool>
     {
-        IRepository<AppUser> _repository;
+        private readonly IRepository<AppUser> _repository;
 
         public DeleteUserCommandHandler(IRepository<AppUser> repository)
         {

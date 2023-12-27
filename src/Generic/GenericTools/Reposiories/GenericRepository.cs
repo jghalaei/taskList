@@ -7,8 +7,8 @@ namespace GenericTools.Repositories
 {
     public class GenericRepository<T> : IRepository<T> where T : EntityBase
     {
-        DbContext _dbContext;
-        DbSet<T> _entities;
+        private readonly DbContext _dbContext;
+        private readonly DbSet<T> _entities;
         public GenericRepository(DbContext dbContext)
         {
             _dbContext = dbContext;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace User.Application.PasswordHash
 {
-    public class PasswordHasher
+    public static class PasswordHasher
     {
         public static string HashPassword(string password, out string salt)
         {

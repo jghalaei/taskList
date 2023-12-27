@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GenericContracts.EventBusMessages
 {
-    public class EventBusConstants
+    public static class EventBusConstants
     {
         public const string TaskCreatedQueue = "TaskCreatedQueue";
         public const string TaskUpdatedQueue = "TaskUpdatedQueue";

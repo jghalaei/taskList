@@ -13,10 +13,10 @@ namespace Task.Application.Features.Commands.ChangeTaskStatus
 {
     public class ChangeTaskStatusCommandHandler : IRequestHandler<ChangeTaskStatusCommand, Guid>
     {
-        IRepository<TaskHistory> _historyRepository;
-        IRepository<TodoTask> _todoRepository;
-        IUserAccessor _accessor;
-        IPublishEndpoint _publishEndpoint;
+        private readonly IRepository<TaskHistory> _historyRepository;
+        private readonly IRepository<TodoTask> _todoRepository;
+        private readonly IUserAccessor _accessor;
+        private readonly IPublishEndpoint _publishEndpoint;
         public ChangeTaskStatusCommandHandler(IRepository<TaskHistory> historyRepository, IRepository<TodoTask> todoRepository, IUserAccessor accessor, IPublishEndpoint publishEndpoint)
         {
             _historyRepository = historyRepository;
@@ -45,7 +45,7 @@ namespace Task.Application.Features.Commands.ChangeTaskStatus
             todo.DueDate = todo.DueDate.ToUniversalTime();
             await _todoRepository.UpdateAsync(todo);
             await _historyRepository.InsertAsync(history);
-            await _publishEndpoint.Publish(new TaskStatusUpdatedEvent(todo.UserId, todo.DueDate, history.OldStatus, history.NewStatus));
+            await _publishEndpoint.Publish(new TaskStatusUpdatedEvent(todo.UserId, todo.DueDate, history.OldStatus, history.NewStatus), cancellationToken);
             return todo.Id;
         }
     }

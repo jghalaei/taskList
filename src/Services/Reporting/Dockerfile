@@ -16,12 +16,12 @@ COPY ["Services/Reporting", "Services/Reporting/"]
 COPY ["../../Generic/GenericTools", "Generic/GenericTools/"]
 COPY ["../../Generic/GenericContracts", "Generic/GenericContracts/"]
 
-WORKDIR "/src/Services/Reporting"
-RUN dotnet build "Reporting.csproj" -c $configuration -o /app/build
+WORKDIR "/src/Services/Reporting""
+RUN dotnet build "Reporting.csproj" -c "$configuration" -o /app/build
 
 FROM build AS publish
 ARG configuration=Release
-RUN dotnet publish "Reporting.csproj" -c $configuration -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Reporting.csproj" -c "$configuration" -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

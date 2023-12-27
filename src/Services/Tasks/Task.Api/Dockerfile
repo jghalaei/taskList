@@ -24,11 +24,11 @@ RUN dotnet restore "Services/Tasks/Task.Api/Task.Api.csproj"
 COPY ["Generic/", "Generic/"]
 COPY ["Services/Tasks/", "Services/Tasks/"]
 WORKDIR "/src/Services/Tasks/Task.Api"
-RUN dotnet build "Task.Api.csproj" -c $configuration -o /app/build
+RUN dotnet build "Task.Api.csproj" -c "$configuration" -o /app/build
 
 FROM build AS publish
 ARG configuration=Release
-RUN dotnet publish "Task.Api.csproj" -c $configuration -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Task.Api.csproj" -c "$configuration" -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
