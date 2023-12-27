@@ -7,7 +7,7 @@ using Reporting.Entities;
 
 namespace Reporting.Repositories
 {
-    public class ReportingRepository : IRepository<Report>
+    public class ReportingRepository : IReportRepository
     {
         private IReportContext _context;
         private ILogger<ReportingRepository> _logger;
@@ -56,6 +56,15 @@ namespace Reporting.Repositories
             FilterDefinition<Report> filter = Builders<Report>.Filter.Eq("Id", Id);
             var deleteResult = await _context.Reports.DeleteOneAsync(filter);
             return deleteResult.IsAcknowledged && deleteResult.DeletedCount > 0;
+        }
+
+        public async Task<Report> InsertUpdateAsync(Report entity)
+        {
+            var report = _context.Reports.Find(p => p.UserID == entity.UserID).FirstOrDefault();
+            if (report == null)
+                return await InsertAsync(entity);
+            else
+                return await UpdateAsync(entity);
         }
     }
 }

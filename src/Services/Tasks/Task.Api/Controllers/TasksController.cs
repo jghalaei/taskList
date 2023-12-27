@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -26,6 +27,7 @@ namespace Task.Api.Controllers
         public TasksController(IMediator mediator)
         {
             _mediator = mediator;
+
         }
         [HttpGet("{Id}", Name = "GetTask")]
         public async Task<IActionResult> GetTask(Guid Id)
@@ -46,8 +48,7 @@ namespace Task.Api.Controllers
         public async Task<IActionResult> CreateTask([FromBody] CreateTaskCommand command)
         {
             var result = await _mediator.Send(command);
-            Response.Headers.Add("Access-Control-Expose-Headers", "Location");
-            return CreatedAtRoute("GetTask", new { Id = result.Id },result);
+            return CreatedAtRoute("GetTask", new { Id = result.Id }, result);
         }
         [HttpPut]
         public async Task<IActionResult> ChangeTaskStatus([FromBody] ChangeTaskStatusCommand command)

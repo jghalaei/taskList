@@ -6,6 +6,7 @@ using GenericContracts.Contracts;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Reporting.Entities;
+using Reporting.Repositories;
 
 namespace Reporting.Endpoints
 {
@@ -13,17 +14,19 @@ namespace Reporting.Endpoints
     {
         public static RouteGroupBuilder MapReportingEndpoints(this IEndpointRouteBuilder routes)
         {
-            var group = routes.MapGroup("/reporting");
-            group.MapGet("/users/", async (IRepository<Report> repository) => await GetUsersStats(repository));
+            var group = routes.MapGroup("/api/v1/report");
+            group.MapGet("/", async (IReportRepository repository) => await GetUsersStats(repository));
 
-            group.MapGet("/users/{userId}", async (IRepository<Report> repository, Guid userId, [FromQuery] DateTime? date) => await GetUsersStats(repository, userId, date));
+            group.MapGet("/{userId}", async (IReportRepository repository, Guid userId, [FromQuery] DateTime? date) => await GetUsersStats(repository, userId, date));
 
             return group;
         }
 
+
+
         private static async Task<IResult> GetUsersStats(IRepository<Report> repository)
         {
-            var result = await repository.GetAllAsync(report => report.ReportDate.Date == DateTime.Now.Date);
+            var result = await repository.GetAllAsync();
             return Results.Ok(result);
         }
         private static async Task<IResult> GetUsersStats(IRepository<Report> repository, Guid userId, DateTime? date)

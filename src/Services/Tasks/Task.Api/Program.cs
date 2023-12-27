@@ -28,7 +28,7 @@ internal class Program
         builder.Services.AddAuthorization();
         builder.Services.AddHealthChecks();
         builder.Services.AddInfrastructureServices(builder.Configuration);
-        builder.Services.AddApplicationServices();
+        builder.Services.AddApplicationServices(builder.Configuration);
         // Add services to the container.
         //builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddControllers();

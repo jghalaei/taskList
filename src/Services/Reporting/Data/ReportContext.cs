@@ -14,7 +14,8 @@ public class ReportContext : IReportContext
     {
         _configuration = configuration;
         var client = new MongoClient(_configuration["DatabaseSettings:ConnectionString"]);
-        var database = client.GetDatabase(_configuration["DatabaseSettings:DatabaseName"]);
+        string dbName = _configuration["DatabaseSettings:DatabaseName"] ?? "ReportingDb";
+        var database = client.GetDatabase(dbName);
         Reports = database.GetCollection<Report>(_configuration["DatabaseSettings:CollectionName"]);
     }
     public IMongoCollection<Report> Reports { get; set; }

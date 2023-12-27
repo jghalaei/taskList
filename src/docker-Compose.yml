@@ -33,6 +33,12 @@ services:
       context: .
       dockerfile: Services/Tasks/Task.API/Dockerfile
 
+  reporting.api:
+    image: report.api
+    build:
+      context: .
+      dockerfile: Services/Reporting/Dockerfile
+
   task.gateway:
     image: task.gateway
     build:
