@@ -3,6 +3,8 @@ using Task.Application;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using GenericTools.Logger;
+
+namespace Task.Api;
 internal class Program
 {
     private static void Main(string[] args)
