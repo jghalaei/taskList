@@ -1,0 +1,4 @@
+sqp_173d0920c5f87fe14384166a8a9841d53728fa6e
+dotnet sonarscanner begin /k:"Tasklist-key" /d:sonar.host.url="http://localhost:9000"  /d:sonar.token="sqp_173d0920c5f87fe14384166a8a9841d53728fa6e"
+
+ dotnet sonarscanner end /d:sonar.token="sqp_173d0920c5f87fe14384166a8a9841d53728fa6e"
